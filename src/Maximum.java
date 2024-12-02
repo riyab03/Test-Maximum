@@ -1,10 +1,10 @@
 public class Maximum {
-    public static int Comparing(int a,int b,int c){
-        int maxi=a;
-        if(maxi<b) {
+    public static Integer Comparing(Integer a,Integer b,Integer c){
+        Integer maxi=a;
+        if(b.compareTo(maxi)>0) {
             maxi=b;
         }
-        if(maxi<c){
+        if(c.compareTo(maxi)>0){
             maxi=c;
         }
         return maxi;
@@ -12,6 +12,6 @@ public class Maximum {
     public static void main(String[] args) {
         System.out.println(Comparing(5,4,3));
         System.out.println(Comparing(5,14,3));
-        System.out.println(Comparing(5,4,13));
+        System.out.println(Comparing(5,14,33));
     }
 }
