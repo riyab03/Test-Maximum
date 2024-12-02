@@ -19,6 +19,16 @@ public class Maximum {
         }
         return maxi;
     }
+    public static String Comparing(String a,String b,String c){
+        String maxi=a;
+        if(b.compareTo(maxi)>0) {
+            maxi=b;
+        }
+        if(c.compareTo(maxi)>0){
+            maxi=c;
+        }
+        return maxi;
+    }
     public static void main(String[] args) {
 
         //int
@@ -30,7 +40,13 @@ public class Maximum {
         //float
         float a=10,b=50,c=30;
         System.out.println(Comparing(a,b,c));
+        System.out.println(Comparing(b,a,c));
+        System.out.println(Comparing(c,a,b));
 
-
+        //string
+        String a2="Apple",b2="Peach",c2="Banana";
+        System.out.println(Comparing(a2,b2,c2));
+        System.out.println(Comparing(b2,a2,c2));
+        System.out.println(Comparing(c2,a2,b2));
     }
 }
