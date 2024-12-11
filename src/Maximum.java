@@ -1,43 +1,55 @@
 import java.sql.SQLOutput;
 
-public class Maximum <X,Y,Z>{
-    X a;
-    Y b;
-    Z c;
-    Maximum(X a,Y b,Z c){
-        this.a=a;
-        this.b=b;
-        this.c=c;
+class Maxmum<E extends Comparable<E>> {
+    E a, b, c;
+
+    Maxmum(E a, E b, E c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-    public void printValue(){
-        System.out.println("First Value:"+a);
-        System.out.println("Second Value:"+b);
-        System.out.println("Third Value:"+c);
+    public void printValue() {
+        System.out.println("First Value:" + a);
+        System.out.println("Second Value:" + b);
+        System.out.println("Third Value:" + c);
     }
 
 
-//    public  static <E extends Comparable<E>>  Comparing(E a, E b, E c){
-//        E maxi=a;
-//        if(b.compareTo(maxi)>0) {
-//            maxi=b;
-//        }
-//        if(c.compareTo(maxi)>0){
-//            maxi=c;
-//        }
-//        return maxi;
-//    }
-    public static void main(String[] args) {
+    public static <E extends Comparable<E>> E testMaximum(E a,E b,E c) {
+        E maxi = a;
+        if (b.compareTo(maxi) > 0) {
+            maxi = b;
+        }
+        if (c.compareTo(maxi) > 0) {
+            maxi = c;
+        }
+        return maxi;
+    }
 
-        Integer a=10;
-        Double b=20.0;
-        String c="riya";
-        new Maximum<Integer,Double,String>(a,b,c).printValue();
+    public E testMaximum(){
+        return testMaximum(a,b,c);
+    }
 
-
+}
+public class Maximum{
+        public static void main(String[] args) {
 
         //int
-//        Integer a1=40,b1=30,c1=10;
+        Integer a1=40,b1=30,c1=10;
+        Maxmum<Integer>m1=new Maxmum<>(a1,b1,c1);
+        System.out.println(m1.testMaximum());
+
+        String a2="riya",b2="bisht",c2="tata";
+        Maxmum<String>m2=new Maxmum<>(a2,b2,c2);
+        System.out.println(m2.testMaximum());
+
+        Float a=10f,b=50f,c=30f;
+        Maxmum<Float>m3=new Maxmum<>(a,b,c);
+        System.out.println(m3.testMaximum());
+
+
+
 //        System.out.println(Comparing(a1,b1,c1));
 //        System.out.println(Comparing(b1,a1,c1));
 //        System.out.println(Comparing(b1,c1,a1));
