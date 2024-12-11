@@ -14,14 +14,14 @@ class Maxmum<E extends Comparable<E>> {
         this.arr=arr;
     }
 
-    public E arrMaximum() {
+    public void arrMaximum() {
         E maxi = arr.get(0);
         for(E a:arr) {
             if (a.compareTo(maxi) > 0) {
                 maxi = a;
             }
         }
-        return maxi;
+        printValue(maxi);
     }
 
 
@@ -34,6 +34,7 @@ class Maxmum<E extends Comparable<E>> {
         if (c.compareTo(maxi) > 0) {
             maxi = c;
         }
+
         return maxi;
     }
 
@@ -43,10 +44,8 @@ class Maxmum<E extends Comparable<E>> {
     }
 
 
-    public void printValue() {
-        System.out.println("First Value:" + a);
-        System.out.println("Second Value:" + b);
-        System.out.println("Third Value:" + c);
+    public void printValue(E maxi) {
+        System.out.println("Maximum value: "+maxi);
     }
 
 
@@ -65,7 +64,7 @@ public class Maximum{
             }while(i!=0);
 
             Maxmum<Integer>m1=new Maxmum<>(arr);
-            System.out.println("Maximum number "+m1.arrMaximum());
+            m1.arrMaximum();
 
             ArrayList<String>a1=new ArrayList<>();
             i=1;
@@ -77,7 +76,7 @@ public class Maximum{
             }while(i!=0);
 
             Maxmum<String>m=new Maxmum<>(a1);
-            System.out.println("Maximum element "+m.arrMaximum());
+            m.arrMaximum();
 
         //int
 //        Integer a1=40,b1=30,c1=10;
